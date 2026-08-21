@@ -13,7 +13,7 @@ type Column struct {
 
 func NewColumn(length float64, m hmodel.Model) (Column, error) {
 	if err := hmodel.ValidatePositive("length", length); err != nil {
-		return Column{}, err
+		return Column{}, commitLen(err)
 	}
 	if err := m.Validate(); err != nil {
 		return Column{}, err
