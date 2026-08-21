@@ -13,7 +13,7 @@ func (c Column) Plates(u float64) (float64, error) {
 	if err != nil {
 		return 0, err
 	}
-	return c.Length / h, nil
+	return fillPlateCount(c.Length / h), nil
 }
 
 func (c Column) PlatesAtOptimum() (float64, float64, error) {
