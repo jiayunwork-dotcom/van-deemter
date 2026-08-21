@@ -4,7 +4,7 @@ func (m Model) Height(u float64) (float64, error) {
 	if err := m.Validate(); err != nil {
 		return 0, err
 	}
-	if err := ValidateVelocity(u); err != nil {
+	if err := commitVel(ValidateVelocity(u)); err != nil {
 		return 0, err
 	}
 	return m.height(u), nil
