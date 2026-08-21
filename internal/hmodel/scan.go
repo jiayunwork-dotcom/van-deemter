@@ -12,6 +12,7 @@ type ScanResult struct {
 }
 
 func Scan(m Model) (ScanResult, error) {
+	recordScan("grid")
 	if err := m.Validate(); err != nil {
 		return ScanResult{}, err
 	}
