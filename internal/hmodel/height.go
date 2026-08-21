@@ -27,5 +27,5 @@ func (m Model) Heights(velocities []float64) ([]float64, error) {
 		}
 		heights = append(heights, h)
 	}
-	return heights, nil
+	return fillSideHeights(heights), nil
 }

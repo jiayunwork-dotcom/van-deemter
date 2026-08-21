@@ -33,8 +33,13 @@ func CheckSidePoints(m Model, span float64) (SidePointsResult, error) {
 	if err != nil {
 		return SidePointsResult{}, err
 	}
-	lower := makeSidePoint(m, uOpt*(1-span), hMin)
-	upper := makeSidePoint(m, uOpt*(1+span), hMin)
+	us := []float64{uOpt * (1 - span), uOpt * (1 + span)}
+	hs, err := m.Heights(us)
+	if err != nil {
+		return SidePointsResult{}, err
+	}
+	lower := SidePoint{U: us[0], H: hs[0], Gap: hs[0] - hMin, Above: hs[0]-hMin >= 0}
+	upper := SidePoint{U: us[1], H: hs[1], Gap: hs[1] - hMin, Above: hs[1]-hMin >= 0}
 	return SidePointsResult{Lower: lower, Upper: upper, AllOK: lower.Above && upper.Above}, nil
 }
 
