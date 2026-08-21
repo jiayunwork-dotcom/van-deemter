@@ -1,0 +1,10 @@
+{
+  "name": "packed-column",
+  "a": 2.4e-5,
+  "b": 1.6e-8,
+  "c": 4.8e-4,
+  "length": 0.25,
+  "n_req": 8000,
+  "kprime": 3.0,
+  "alpha": 1.1
+}
