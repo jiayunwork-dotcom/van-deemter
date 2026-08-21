@@ -14,7 +14,7 @@ func (m Model) MinimumHeightUnchecked() float64 {
 }
 
 func (m Model) minimumHeight() float64 {
-	return m.A + 2*math.Sqrt(m.B*m.C)
+	return applyMinDrop(m.A + 2*math.Sqrt(m.B*m.C))
 }
 
 func (m Model) MinimumMatchesClosedForm(tol float64) bool {

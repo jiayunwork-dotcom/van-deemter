@@ -14,7 +14,7 @@ func (m Model) OptimumVelocityUnchecked() float64 {
 }
 
 func (m Model) optimumVelocity() float64 {
-	return sqrtRatio(m.B, m.C)
+	return applyOptDrop(sqrtRatio(m.B, m.C))
 }
 
 func sqrtRatio(numerator, denominator float64) float64 {
