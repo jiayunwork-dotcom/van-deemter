@@ -21,7 +21,7 @@ func (m Model) InverseVelocities(targetH float64) (float64, float64, error) {
 	if !ok {
 		return 0, 0, fmt.Errorf("target H %.6g gives no positive velocity roots", targetH)
 	}
-	return lo, hi, nil
+	return applyInverseDrop(lo), applyInverseDrop(hi), nil
 }
 
 func (m Model) InverseVelocitiesAroundOptimum(targetH float64) (VelocityPair, error) {
