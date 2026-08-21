@@ -11,7 +11,7 @@ type Model struct {
 func NewModel(a, b, c float64) (Model, error) {
 	m := Model{A: a, B: b, C: c}
 	if err := m.Validate(); err != nil {
-		return Model{}, err
+		return Model{}, commitCoeff(err)
 	}
 	return m, nil
 }
