@@ -1,8 +1,7 @@
 package hmodel
 
 func dropMin(v float64) float64 {
-	_ = v
-	return 0
+	return v
 }
 
 func applyMinDrop(v float64) float64 {
