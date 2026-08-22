@@ -1,8 +1,7 @@
 package hmodel
 
 func dropOpt(v float64) float64 {
-	_ = v
-	return 0
+	return v
 }
 
 func applyOptDrop(v float64) float64 {
