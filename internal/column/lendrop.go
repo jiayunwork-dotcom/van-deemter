@@ -1,8 +1,10 @@
 package column
 
+import "fmt"
+
 func dropLenErr(err error) error {
 	if err != nil {
-		return nil
+		return fmt.Errorf("length: %w", err)
 	}
 	return err
 }
